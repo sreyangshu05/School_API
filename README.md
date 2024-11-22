@@ -30,37 +30,33 @@ Before you begin, ensure that you have the following installed:
    CLOUDINARY_API_SECRET=your_api_secret
 
 3. API Endpoints
-Students
-1. Add a new student
-Method: POST
-Endpoint: /students
-Request Body:
-json
-Copy code
-{
-  "name": "John Doe",
-  "email": "john.doe@example.com",
-  "classId": "60b1e8e9f4e0b8b8c93be8d4",
-  "profileImage": "image_url"
-}
-Response Body:
-json
-Copy code
-{
+ - Add a new student
+ - Method: POST
+ - Endpoint: /students
+ - Request Body:
+   ```bash
+    {
+   "name": "John Doe",
+   "email": "john.doe@example.com",
+   "classId": "60b1e8e9f4e0b8b8c93be8d4",
+   "profileImage": "image_url"
+   }
+- Response Body:
+  ```bash
+  {
   "name": "John Doe",
   "email": "john.doe@example.com",
   "classId": "60b1e8e9f4e0b8b8c93be8d4",
   "profileImageUrl": "image_url",
   "createdAt": "2024-11-21T12:34:56Z",
   "_id": "60b2a1f8f6a1d1b8c93be8f1"
-}
-2. Get all students
-Method: GET
-Endpoint: /students?page=1&limit=10
-Response Body:
-json
-Copy code
-[
+  }
+- Get all students:
+- Method: GET
+- Endpoint: /students?page=1&limit=10
+- Response Body:
+  ```bash
+  [
   {
     "name": "John Doe",
     "email": "john.doe@example.com",
@@ -77,130 +73,46 @@ Copy code
     "createdAt": "2024-11-22T12:34:56Z",
     "_id": "60b2a1f8f6a1d1b8c93be8f2"
   }
-]
-3. Get a single student by ID
-Method: GET
-Endpoint: /students/{studentId}
-Response Body:
-json
-Copy code
-{
+  ]
+
+- Get a single student by ID
+- Method: GET
+- Endpoint: /students/{studentId}
+  ```bash
+  {
   "name": "John Doe",
   "email": "john.doe@example.com",
   "classId": "60b1e8e9f4e0b8b8c93be8d4",
   "profileImageUrl": "image_url",
   "createdAt": "2024-11-21T12:34:56Z",
   "_id": "60b2a1f8f6a1d1b8c93be8f1"
-}
-4. Update a student
-Method: PUT
-Endpoint: /students/{studentId}
-Request Body:
-json
-Copy code
-{
+  }
+- Update a student:
+- Method: PUT
+- Endpoint: /students/{studentId}
+- Request Body:
+  ```bash
+  {
   "name": "John Doe Updated",
   "classId": "60b1e8e9f4e0b8b8c93be8d5"
-}
-Response Body:
-json
-Copy code
-{
+  }
+- Response Body:
+  ```bash
+  {
   "name": "John Doe Updated",
   "email": "john.doe@example.com",
   "classId": "60b1e8e9f4e0b8b8c93be8d5",
   "profileImageUrl": "image_url",
   "createdAt": "2024-11-21T12:34:56Z",
   "_id": "60b2a1f8f6a1d1b8c93be8f1"
-}
-5. Soft delete a student
-Method: DELETE
-Endpoint: /students/{studentId}
-Response Body:
-json
-Copy code
-{
-  "message": "Student deleted successfully"
-}
-Teachers
-6. Add a new teacher
-Method: POST
-Endpoint: /teachers
-Request Body:
-json
-Copy code
-{
-  "name": "Mr. Smith",
-  "email": "mr.smith@example.com",
-  "subject": "Mathematics",
-  "profileImage": "teacher_image_url"
-}
-Response Body:
-json
-Copy code
-{
-  "name": "Mr. Smith",
-  "email": "mr.smith@example.com",
-  "subject": "Mathematics",
-  "profileImageUrl": "teacher_image_url",
-  "createdAt": "2024-11-21T13:00:00Z",
-  "_id": "60b2a1f8f6a1d1b8c93be8f3"
-}
-7. Get all teachers
-Method: GET
-Endpoint: /teachers?page=1&limit=10
-Response Body:
-json
-Copy code
-[
-  {
-    "name": "Mr. Smith",
-    "email": "mr.smith@example.com",
-    "subject": "Mathematics",
-    "profileImageUrl": "teacher_image_url",
-    "createdAt": "2024-11-21T13:00:00Z",
-    "_id": "60b2a1f8f6a1d1b8c93be8f3"
   }
-]
-8. Get a teacher by ID
-Method: GET
-Endpoint: /teachers/{teacherId}
-Response Body:
-json
-Copy code
-{
-  "name": "Mr. Smith",
-  "email": "mr.smith@example.com",
-  "subject": "Mathematics",
-  "profileImageUrl": "teacher_image_url",
-  "createdAt": "2024-11-21T13:00:00Z",
-  "_id": "60b2a1f8f6a1d1b8c93be8f3"
-}
-Classes
-9. Assign a teacher to a class
-Method: PUT
-Endpoint: /classes/{classId}/assignTeacher
-Request Body:
-json
-Copy code
-{
-  "teacherId": "60b2a1f8f6a1d1b8c93be8f3"
-}
-Response Body:
-json
-Copy code
-{
-  "message": "Teacher assigned to class successfully"
-}
-10. Delete a class
-Method: DELETE
-Endpoint: /classes/{classId}
-Response Body:
-json
-Copy code
-{
-  "message": "Class deleted successfully"
-}
-Testing
-Use Postman or your preferred tool to test the endpoints. Ensure you include the JWT token in the headers as Authorization: Bearer {token} for protected routes.
-   
+- Soft delete a student
+- Method: DELETE
+- Endpoint: /students/{studentId}
+- Response Body:
+ ```bash
+ {
+   "message": "Student deleted successfully"
+ }
+
+
